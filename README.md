@@ -1,5 +1,7 @@
 # Job Finder Junior - Java Backend
 
+![CI](https://github.com/Ivictors/openx-job-finder/workflows/CI/badge.svg)
+
 Automatizador de busca de vagas para desenvolvedores Java Backend Junior com foco em vagas remotas ou presenciais em Sao Paulo.
 
 ## Funcionalidades
@@ -113,10 +115,18 @@ O script gera um arquivo JSON em `output/vagas_junior_java.json`:
 ## Estrutura do Projeto
 
 ```
-job-finder-junior/
-├── busca_vagas_junior.py    # Script principal
-├── README.md                # Documentacao
-└── output/                  # Resultados (gerado automaticamente)
+openx-job-finder/
+├── .github/
+│   ├── workflows/
+│   │   └── ci.yml              # Pipeline de CI
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.md       # Template de bug
+│   │   └── feature_request.md  # Template de feature
+│   └── pull_request_template.md # Template de PR
+├── .gitignore
+├── busca_vagas_junior.py       # Script principal
+├── README.md                   # Documentacao
+└── output/                     # Resultados (gerado automaticamente)
     └── vagas_junior_java.json
 ```
 
@@ -166,11 +176,33 @@ def scrape_novo_site(page):
 
 ## Contribuindo
 
+Contribuicoes sao bem-vindas! Siga os passos:
+
 1. Faca um fork do projeto
 2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Commit suas mudancas (`git commit -m 'feat: adiciona nova feature'`)
+3. Commit suas mudancas usando conventional commits:
+   - `feat:` para novas funcionalidades
+   - `fix:` para correcoes de bugs
+   - `docs:` para documentacao
+   - `refactor:` para refatoracoes
 4. Push para a branch (`git push origin feature/nova-feature`)
 5. Abra um Pull Request
+
+### Templates Disponiveis
+
+- **Bug Report**: Use o template em `.github/ISSUE_TEMPLATE/bug_report.md`
+- **Feature Request**: Use o template em `.github/ISSUE_TEMPLATE/feature_request.md`
+- **Pull Request**: Siga o template em `.github/pull_request_template.md`
+
+### CI/CD
+
+O projeto utiliza GitHub Actions para validacao continua:
+
+- **Lint**: Verificacao de sintaxe com flake8
+- **Syntax Check**: Validacao de codigo Python
+- **Pylint**: Analise estatica (informativo)
+
+O CI roda automaticamente em cada push para `main` e em Pull Requests.
 
 ## Autor
 
