@@ -1,0 +1,11 @@
+playwright/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+output/
+*.json
+.env
+.venv
+venv/
