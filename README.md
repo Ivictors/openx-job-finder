@@ -28,16 +28,38 @@ Automatizador de busca de vagas para desenvolvedores Java Backend Junior com foc
 - **asyncio** - Operacoes assincronas
 - **JSON** - Formato de saida dos dados
 
-## Pre-requisitos
+## Instalacao
+
+### 1. Clone o repositorio
 
 ```bash
-# Python 3.14 ou superior
-python --version
+git clone https://github.com/Ivictors/openx-job-finder.git
+cd openx-job-finder
+```
 
-# Instalar dependencias
-pip install playwright
+### 2. Crie um ambiente virtual
 
-# Instalar navegador para Playwright
+**Windows:**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+**Linux/macOS:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Instale as dependencias
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Instale o navegador para Playwright
+
+```bash
 python -m playwright install chromium
 ```
 
@@ -167,6 +189,37 @@ def scrape_novo_site(page):
     # Implementar logica de scraping
     return jobs
 ```
+
+## Solucao de Problemas
+
+### Erro: "playwright nao encontrado"
+
+Certifique-se de que o ambiente virtual esta ativado:
+```bash
+# Windows
+venv\Scripts\activate
+
+# Linux/macOS
+source venv/bin/activate
+```
+
+### Erro: "chromium nao encontrado"
+
+Instale o navegador do Playwright:
+```bash
+python -m playwright install chromium
+```
+
+### Erro: "ModuleNotFoundError: No module named 'playwright'"
+
+Instale as dependencias:
+```bash
+pip install -r requirements.txt
+```
+
+### O script abre uma janela do navegador
+
+O script roda em modo headless (sem interface grafica). Se estiver vendo uma janela, verifique se a variavel `headless=True` esta definida no arquivo `busca_vagas_junior.py`.
 
 ## Limitacoes
 
